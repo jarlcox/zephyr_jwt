@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>org.koix.zephyr</groupId>
+    <artifactId>zephyr-jwt-project</artifactId>
+    <version>0.0.1</version>
+    <modules>
+        <module>zephyr-jwt-common</module>
+        <module>zephyr-jwt-authen</module>
+        <module>zephyr-jwt-system</module>
+        <module>zephyr-jwt-showcase</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.18.RELEASE</version>
+    </parent>
+    
+    <properties>
+        <file.encoding>UTF-8</file.encoding>
+        <project.build.sourceEncoding>${file.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
+        <maven.compiler.encoding>${file.encoding}</maven.compiler.encoding>
+        
+        <java.version>1.8</java.version>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+
+        <spring.boot.oauth2.version>2.1.18.RELEASE</spring.boot.oauth2.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <mybatis.spring.version>2.2.2</mybatis.spring.version>
+        <log4j2.version>2.17.1</log4j2.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>https://maven.aliyun.com/nexus/content/repositories/central</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <target>${java.version}</target>
+                    <source>${java.version}</source>
+                    <encoding>${file.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <skip>false</skip>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

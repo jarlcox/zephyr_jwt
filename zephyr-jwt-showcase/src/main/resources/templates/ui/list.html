@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>SHOWCASE</title>
+    </head>
+    <body>
+        <h3>当前登录用户：<span th:text="${authentication.name}"></span></h3>
+        <h2>这是SHOWCASE页面</h2>
+        
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">退出</button>
+        </form>
+
+    </body>
+</html>
